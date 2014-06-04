@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bookshop.domain">
+
+	<class name="Category" table="CATEGORY">
+        <id name="id">
+        <generator class="native"></generator>
+        </id>
+       <property name="cateName" type="java.lang.String"></property>
+       <property name="cateDesc" type="java.lang.String"></property>
+    </class>
+
+</hibernate-mapping>

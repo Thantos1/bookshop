@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- 指定Spring的配置文件，默认从Web根目录寻找配置文件，我们可以通过Spring提供的classpath:前缀指定从类路径下寻找 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:beans.xml</param-value>
+	</context-param>
+
+	<!-- 对Spring容器进行实例化 ，容器实例放在application(ServletContext)范围 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<display-name>Bookshop</display-name>
+
+
+	<!-- 配置struts1前端控制器 -->
+	<servlet>
+		<servlet-name>actionServlet</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		
+		<init-param>
+	      <param-name>config</param-name>
+	      <param-value>/WEB-INF/struts-config.xml</param-value>
+	    </init-param>
+		
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>actionServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+</web-app>
