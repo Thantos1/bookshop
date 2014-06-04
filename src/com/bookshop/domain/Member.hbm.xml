@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bookshop.domain">
+
+	<class name="Member" table="MEMBER">
+        <id name="id">
+        <generator class="native"></generator>
+        </id>
+      <many-to-one name="memberlevel" column="memberlevel_id" not-null = "true" class="Memberlevel"></many-to-one>
+      
+      <property name="username"></property>
+      <property name="password"></property>
+      
+      <property name="name"></property>
+      
+      <property name="phone"></property>
+      
+      
+      <property name="address"></property>
+      
+      <property name="zipCode"></property>
+      
+      <property name="registerDate"></property>
+      
+      <property name="lastLoginDate"></property>
+      
+      <property name="loginTimes"></property>
+      
+      <property name="email"></property>
+      
+      
+      
+    </class>
+
+</hibernate-mapping>

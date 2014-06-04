@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bookshop.domain">
+
+	<class name="Merchandise" table="MERCHANDISE">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+
+		<many-to-one name="category" class="Category" column="category_id"></many-to-one>
+		<property name="merName"></property>
+
+		<property name="price"></property>
+		<property name="sprice"></property>
+		<property name="merModel"></property>
+		<property name="picture"></property>
+		<property name="merDesc"></property>
+		<property name="manufacturer"></property>
+		<property name="leaveFactoryDate"></property>
+		<property name="special"></property>
+		
+		<!--映射Merchandise到comment的一对多单向关联-->	
+		<set name="comments" 
+			 lazy="true"
+			 inverse="true"
+			 cascade="all">
+			 <key column="mer_id"/>
+			 <one-to-many class="Comment"/>
+		</set>
+
+	</class>
+
+</hibernate-mapping>

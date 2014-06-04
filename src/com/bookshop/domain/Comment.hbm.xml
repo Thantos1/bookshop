@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bookshop.domain">
+
+	<class name="Comment" table="COMMENT">
+        <id name="id">
+        <generator class="native"></generator>
+        </id>
+        <many-to-one name="member" class="com.bookshop.domain.Member" column="member_id" not-null="true"/>
+        <many-to-one name="cart" class="com.bookshop.domain.Cart" column="cart_id" />
+        <many-to-one name="merchandise" class="com.bookshop.domain.Merchandise" column="mer_id" />
+        <property name="commentLevel"></property>
+        <property name="commentDate"></property>
+        <property name="commentContent"></property>
+    </class>
+
+</hibernate-mapping>

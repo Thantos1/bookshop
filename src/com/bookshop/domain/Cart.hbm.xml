@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.bookshop.domain">
+    <class name="Cart" table="CART">
+        <id name="id" type="java.lang.Integer">
+            <generator class="native" />
+        </id>
+        
+         <!--映射Cart到Member的多对一单向关联-->
+        <many-to-one name="member"
+        			 column="member_id"
+        			 class="Member"
+        			 lazy="false"
+        			 not-null="true"/>  
+        <property name="money" type="java.lang.Double"/>
+        <property name="cartStatus" type="java.lang.Integer"/>
+    
+     
+        			 
+		<!--映射Cart到Merchandise的多对多单向关联-->	
+		<set name="merchandises"
+			 table="cart_merchandise"
+			 lazy="true"
+			 cascade="save-update">
+			 <key column="cart_id"/>
+			 <many-to-many class="Merchandise" column="merchandise_id"/>
+		</set>	        			        
+    </class>
+</hibernate-mapping>
