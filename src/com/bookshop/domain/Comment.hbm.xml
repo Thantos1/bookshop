@@ -10,9 +10,8 @@
         <generator class="native"></generator>
         </id>
         <many-to-one name="member" class="com.bookshop.domain.Member" column="member_id" not-null="true"/>
-        <many-to-one name="cart" class="com.bookshop.domain.Cart" column="cart_id" />
-        <many-to-one name="merchandise" class="com.bookshop.domain.Merchandise" column="mer_id" />
-        <property name="commentLevel"></property>
+        <many-to-one name="merchandise" class="com.bookshop.domain.Merchandise" column="mer_id"  not-null="true" />
+        <property name="commentLevel" type="java.lang.String"></property>
         <property name="commentDate"></property>
         <property name="commentContent"></property>
     </class>

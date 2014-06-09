@@ -14,7 +14,7 @@
        <property name="number" type="java.lang.Integer" column="MERNUMBER"></property>
        <property name="price" type="java.lang.Double"></property>
        <property name="money" type="java.lang.Double"></property>
-       <property name="commentStatus" type="java.lang.Integer"></property>       
+       <property name="commentStatus" type="java.lang.Integer" column="COMMENT_STATUS"></property>          
     </class>
 
 </hibernate-mapping>

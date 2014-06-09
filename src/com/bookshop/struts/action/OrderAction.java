@@ -86,6 +86,10 @@ public class OrderAction extends DispatchAction {
 					row.put("merNumber", cartMer.getNumber());
 					row.put("money",((Double)row.get("memberPrice")).doubleValue()*(cartMer.getNumber()));
 					row.put("merId",mer.getId());
+					int commentStatus = cartMer.getCommentStatus();
+					row.put("commentStatus", commentStatus);
+					int cartMerId=cartMer.getId();
+					row.put("cartMerId",cartMerId);
 					result.add(row);
 					
 					

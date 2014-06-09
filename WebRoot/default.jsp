@@ -188,7 +188,7 @@
 		                   <td align="TOP">
 							<table width="118" height="118" border="0" align="center" cellpadding="0" cellspacing="0" style="border:1px; border-style:solid; border-color:#888888">
 								<tr align="center" valign="middle">
-								  <td><a href="merAction.do?method=browseMerchandise&merId=${mer.id}" target=_blank> <img src="${mer.picture}" width="100" height="100" border="0"> </a></td>
+								  <td><a href="merAction.do?method=browseMerchandise&merId=${mer.id}&pageNo=1" target=_blank> <img src="${mer.picture}" width="100" height="100" border="0"> </a></td>
 								</tr>
 							</table>
 							</td>
@@ -204,7 +204,7 @@
 		                 </tr>
 		                 <tr>
 		                   <td>
-							<a href="merAction.do?method=browseMerchandise&merId=${mer.id}"><img src="images/icon_car.gif" border=0></a> 
+							<a href="merAction.do?method=browseMerchandise&merId=${mer.id}&pageNo=1""><img src="images/icon_car.gif" border=0></a> 
 							<a href="manageCartAction.do?method=buyMerchandise&merId=${mer.id}"><img alt="" src="images/icon_buy.gif" border=0></a>
 						  </td>
 		                 </tr>
@@ -236,20 +236,20 @@
 		                   <td align="TOP">
 							<table width="118" height="118" border="0" align="center" cellpadding="0" cellspacing="0" style="border:1px; border-style:solid; border-color:#888888">
 								<tr align="center" valign="middle">
-								  <td><a href="merAction.do?method=browseMerchandise&merId=${mer.id}" target=_blank> <img src="${mer.picture}" width="100" height="100" border="0"> </a></td>
+								  <td><a href="merAction.do?method=browseMerchandise&merId=${mer.id}&pageNo=1"" target=_blank> <img src="${mer.picture}" width="100" height="100" border="0"> </a></td>
 								</tr>
 							</table>
 							</td>
 		                 </tr>
 		                 <tr align="center" height="30">
-		                   <td><a href="merAction.do?method=browseMerchandise&merId=${mer.id}" target=_blank><span  class="blueText">${mer.merName}</span></a></td>
+		                   <td><a href="merAction.do?method=browseMerchandise&merId=${mer.id}&pageNo=1"" target=_blank><span  class="blueText">${mer.merName}</span></a></td>
 		                 </tr>
 		                 <tr align="center" height="20">
 		                   <td class="text"><bean:message key="mer.price"/>г║ гд${mer.price} </td>
 		                 </tr>
 		                 <tr>
 		                   <td class=GoodsItem_buy>
-							<a href="merAction.do?method=browseMerchandise&merId=${mer.id}"><img src="images/icon_car.gif" border=0></a> 
+							<a href="merAction.do?method=browseMerchandise&merId=${mer.id}&pageNo=1""><img src="images/icon_car.gif" border=0></a> 
 							<a href="manageCartAction.do?method=buyMerchandise&merId=${mer.id }"><img alt="" src="images/icon_buy.gif" border=0></a>
 						  </td>
 		                 </tr>

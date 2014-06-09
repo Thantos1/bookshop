@@ -9,10 +9,9 @@ public class Comment {
 	private int id;
 	private Merchandise merchandise;
 	private Member member;
-	private Cart cart;
 	private String commentContent;
 	private Date commentDate;
-	private int commentLevel;
+	private String commentLevel;
 	
 	public Member getMember() {
 		return member;
@@ -20,12 +19,7 @@ public class Comment {
 	public void setMember(Member member) {
 		this.member = member;
 	}
-	public Cart getCart() {
-		return cart;
-	}
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
+
 	public int getId() {
 		return id;
 	}
@@ -50,10 +44,10 @@ public class Comment {
 	public void setCommentDate(Date commentDate) {
 		this.commentDate = commentDate;
 	}
-	public int getCommentLevel() {
+	public String getCommentLevel() {
 		return commentLevel;
 	}
-	public void setCommentLevel(int commentLevel) {
+	public void setCommentLevel(String commentLevel) {
 		this.commentLevel = commentLevel;
 	}
 	

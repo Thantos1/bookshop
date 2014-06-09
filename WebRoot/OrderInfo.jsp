@@ -121,7 +121,7 @@
                     <td class="blackTitle" align="center"><bean:message key="mer.price"/></td>
                     <td class="blackTitle" align="center"><bean:message key="sel.price"/></td>
                     <td class="blackTitle" align="center"><bean:message key="sel.number"/></td>
-                    <td class="blackTitle" align="center"><bean:message key="sel.money"/></td>
+                    <td class="blackTitle" align="center"></td>
                     </tr>
                     <logic:iterate id="row" name="result" type="java.util.Map">
                       <tr class="text" align="center" bgcolor="#FFFFFF">
@@ -130,6 +130,16 @@
                         <td>гд${row.memberPrice}</td>
                         <td>${row.merNumber}</td>
                         <td>гд${row.money}</td>
+                        <td>
+                        <logic:equal name="row" property="commentStatus" value="1">
+                        	<bean:message key="comment.haveComment"/>
+                        </logic:equal>
+                        <logic:equal name="row" property="commentStatus" value="0">
+                        	<html:link page="/commentAction.do?method=addComment&cartMerId=${row.cartMerId}">
+                        		<bean:message key="comment.notComment"/>
+                        	</html:link>
+                        </logic:equal>
+                        </td>
                       </tr>
                     </logic:iterate>
 				    <tr height="10" bgcolor="#F7F3F7"><td colspan="5"></td></tr>					

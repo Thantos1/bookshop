@@ -13,8 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.bookshop.domain.Category;
+import com.bookshop.domain.Comment;
 import com.bookshop.domain.Merchandise;
 import com.bookshop.service.CategoryService;
+import com.bookshop.service.CommentService;
 import com.bookshop.service.MerchandiseService;
 
 @Controller("/merAction")
@@ -23,6 +25,8 @@ public class MerAction extends DispatchAction {
 	private MerchandiseService merService;
 	@Autowired
 	private CategoryService cateService;
+	@Autowired
+	private CommentService commentService;
 	
 	
 	public ActionForward browseIndexMer(ActionMapping mapping, ActionForm form,
@@ -46,14 +50,30 @@ public class MerAction extends DispatchAction {
 	public ActionForward browseMerchandise(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
+
 		int merId = Integer.parseInt(request.getParameter("merId"));
 		Merchandise mer = merService.loadMerchandise(merId);
 		if(mer!=null)
 			request.setAttribute("mer", mer);
-		
+		System.out.println("---------");
 		List<Category> cates = cateService.browseCates();
 		if(cates!=null && cates.size()>0)
 			request.setAttribute("cateList", cates);
+		
+		//查找评论
+		int pageNo = Integer.parseInt(request.getParameter("pageNo"));
+		int pageSize = 5;
+		List<Comment> commentList=commentService.searchCommentsByMerId(merId, pageNo, pageSize);
+		if(commentList!=null && commentList.size()>0)
+			request.setAttribute("commentList", commentList);
+		
+		int totalCount = commentService.countCommentsByMerId(merId);
+		request.setAttribute("totalCount", new Integer(totalCount));
+		int totalPages = totalCount/pageSize;
+		if((totalCount%pageSize)!=0)
+			totalPages=totalPages+1;
+		request.setAttribute("totalPages", new Integer(totalPages));
+		
 		return mapping.findForward("showMer");
 		
 	}

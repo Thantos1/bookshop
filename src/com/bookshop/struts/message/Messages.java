@@ -35,6 +35,11 @@ public class Messages {
 	public static final String MANAGE_WORD_DEL_SUCC = "word.del.suc";
 	public static final String MANAGE_WORD_DEL_FAILED = "word.del.fail";	
 	
+	
+	//comment
+	public static final String COMMENT_ADD_FAILED = "comment.add.fail";	
+
+	
 	public static final String MANAGE_ADMIN_ADD_SUCC = "admin.add.success";
 	public static final String MANAGE_ADMIN_ADD_FAILED = "admin.add.fail";
 	public static final String MANAGE_ADMIN_DEL_SUCC = "admin.delete.success";

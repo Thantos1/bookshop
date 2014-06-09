@@ -7,7 +7,7 @@ public class CartMerchandise {
 	private int number;
 	private double price;
 	private double money;
-	//后加的
+	//是否评价标志位 ，1：已评价
 	private int commentStatus;
 
 	public int getCommentStatus() {

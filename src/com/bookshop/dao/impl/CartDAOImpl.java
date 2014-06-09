@@ -26,6 +26,7 @@ public class CartDAOImpl implements CartDAO {
 		
 		Session session = sessionFactory.getCurrentSession();
 		session.save(cart);
+		//System.out.println("------------addCart-----------");
 	}
 
 	
@@ -33,8 +34,11 @@ public class CartDAOImpl implements CartDAO {
 	
 	public void updateCart(Cart cart) {
 		
+		//System.out.println("00000000000000000000");
 		Session session = sessionFactory.getCurrentSession();
 		session.update(cart);
+		//System.out.println("00000000000000000000");
+
 	}
 
 	

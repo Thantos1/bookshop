@@ -150,6 +150,7 @@ public class ManageCartAction extends DispatchAction {
 		Member member = (Member) request.getSession().getAttribute("member");
 		if(member==null)
 			return mapping.findForward("memSorry");
+		//根据member找到其购物车商品对象
 		List<CartMerchandise> cartMers = cartService.browseCart(member);
 		if(cartMers==null || cartMers.size()==0){
 			ActionMessages messages = new ActionMessages();
