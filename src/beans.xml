@@ -13,7 +13,10 @@
 
 <!-- spring组件扫描，实现bean的自动载入,自动载入有组件注解的类 给类加上spring组件注解，只需再配置下spring的扫描器就可以实现bean的自动载入。 -->
 
-	<context:component-scan base-package="com.bookshop"></context:component-scan>
+	<context:component-scan base-package="com.bookshop">
+		<context:include-filter type="annotation"
+			expression = "org.aspectj.lang.annotation.Aspect"/>
+	</context:component-scan>
 
 	
 
@@ -88,6 +91,9 @@
 
 	<!-- 基于注解方式配置事务 -->
 	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<aop:aspectj-autoproxy/>
+	<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>
 
 
 </beans>
